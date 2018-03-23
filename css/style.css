@@ -1,9 +1,15 @@
-body {margin: 0;}
-* {box-sizing: border-box;}
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 .ui-sortable {
   min-height: 80px;
 }
+
 .btn-delete {
   position: absolute;
   right: 0;
@@ -11,7 +17,7 @@ body {margin: 0;}
   width: 22px;
   height: 22px;
   border: 0;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   color: white;
 }
 
@@ -19,7 +25,7 @@ body {margin: 0;}
   position: absolute;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   color: white;
 }
 
@@ -27,16 +33,20 @@ body {margin: 0;}
 .board h1 {
   margin-left: 8px;
 }
-.column-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
 
+.column-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
 
 /* COLUMN */
 .column {
-  order: 1;
+  -ms-flex-order: 1;
+      order: 1;
   min-width: 300px;
   min-height: 50vh;
   background-color: lightgrey;
@@ -44,6 +54,7 @@ body {margin: 0;}
   list-style: none;
   position: relative;
 }
+
 .column-add-card {
   cursor: pointer;
   text-decoration: underline;
@@ -62,14 +73,17 @@ body {margin: 0;}
   position: relative;
   background-color: aquamarine;
 }
+
 .card-list {
   list-style: none;
   margin: 5px;
   padding: 0px;
 }
+
 .card-description {
   margin: 2px 0;
 }
+
 .card-placeholder {
   box-sizing: border-box;
   display: block;
@@ -78,3 +92,4 @@ body {margin: 0;}
   border: 2px solid lightgrey;
   background-color: lightblue;
 }
+/*# sourceMappingURL=style.css.map */
