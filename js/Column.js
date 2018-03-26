@@ -1,4 +1,4 @@
-function Column(id, name, bootcamp_kanban_column_id) {
+function Column(id, name) {
 	var self = this;
 	
 	this.id = id;
@@ -29,8 +29,9 @@ function Column(id, name, bootcamp_kanban_column_id) {
 					name: cardName,
 					bootcamp_kanban_column_id: self.id
 				},
+				
 				success: function(response) {
-					var card = new Card(response.id, cardName, bootcamp_kanban_column_id);
+					var card = new Card(response.id, cardName, self.id);
 					self.createCard(card);
 				}
 			});

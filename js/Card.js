@@ -1,8 +1,8 @@
 // KLASA KANBAN CARD
-function Card(id, name) {
+function Card(id, name, columnId) {
 	var self = this;
 	
-
+	this.columnId = columnId;
 	this.id = id;
 	this.name = name || 'No name given';
 	this.element = createCard();
@@ -20,6 +20,7 @@ function Card(id, name) {
 		cardRenameBtn.click(function(){
 			self.renameCard();
 		})
+		
 		
 		card.append(cardDeleteBtn);
 		cardDescription.text(self.name);
@@ -48,10 +49,11 @@ Card.prototype = {
 			method: 'PUT',
 			data: {
 				name: cardName,
-				bootcamp_kanban_column_id: self.bootcamp_kanban_column_id
+				bootcamp_kanban_column_id: self.columnId
 			},
 			success: function(){
-			  	self.element.text(cardName);
+				var cardDescription = $(self.element[0].childNodes[1]);
+				cardDescription.text(cardName);
 			}
 		})
 	}
