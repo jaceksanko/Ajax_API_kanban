@@ -8,7 +8,7 @@ function Card(id, name, columnId) {
 	this.element = createCard();
 
 	function createCard() {
-		var card = $('<li class="card"></li>');
+		var card = $('<li class="card" id="'+ self.id +'"></li>');
 		var cardDeleteBtn = $('<button class="btn-delete">x</button>');
 		var cardDescription = $('<p class="card-description"></p>');
 		var cardRenameBtn = $('<button class="btn-rename-card">Rename</button>')
@@ -20,7 +20,6 @@ function Card(id, name, columnId) {
 		cardRenameBtn.click(function(){
 			self.renameCard();
 		})
-		
 		
 		card.append(cardDeleteBtn);
 		cardDescription.text(self.name);

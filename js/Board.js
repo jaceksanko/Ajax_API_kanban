@@ -27,15 +27,17 @@ function initSortable() {
       connectWith: '.card-list',
 			placeholder: 'card-placeholder',
 			receive: function( event, ui ) {
-				console.log(ui.item);
-				
-				/* $.ajax({
-					url: baseUrl + '/card/' + self.id,
+				var cardId = ui.item[0].id;
+				var columnId = ui.item[0].offsetParent.id;
+				var name = ui.item[0].childNodes[1].innerText;
+				$.ajax({
+					url: baseUrl + '/card/' + cardId,
 					method: 'PUT',
 					data: {
-						bootcamp_kanban_column_id: self.columnId
+						name: name,
+						bootcamp_kanban_column_id: columnId
 					},
-				}) */
+				})
 			}
 		}).disableSelection();
   }
